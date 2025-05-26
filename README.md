@@ -56,6 +56,9 @@ git clone https://github.com/Fundo295/Vibe-Coding-Hackathon.git
 
 Open index.html in any modern browser.
 
+## Deployment: Netlify
+Link: https://agriconne.netlify.app/
+
 
 ## 🤝 Contributors
 This project was created with contributions from:
