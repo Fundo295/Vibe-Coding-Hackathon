@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Alerts - AgriConnect</title>
+    <link rel="stylesheet" href="Styles.css">
+    <link rel="icon" href="logo.png" type="image/png">
+    <style>
+        /* Additional price-specific styles */
+        .price-comparison {
+            background: #f9f9f9;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        .price-timeline {
+            position: relative;
+            height: 300px;
+            margin: 2rem 0;
+        }
+        .notification-demo {
+            background: #e8f5e9;
+            border-radius: 10px;
+            padding: 1.5rem;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="AgriConnect Logo">
+                <h1>AgriConnect</h1>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="service-detail">
+        <div class="service-header">
+            <h2>Market Price Alerts</h2>
+            <p class="service-tagline">Real-time crop price notifications delivered to your phone</p>
+        </div>
+
+        <div class="service-content">
+            <img src="https://media.istockphoto.com/id/1421231401/photo/african-farmers-checking-a-phone-see-exciting-news.jpg?s=612x612&w=0&k=20&c=PMREM_zHJxh3dzc21g6fGpBLUcSZMk6tHF06KikFlbU=" alt="Farmer checking phone with price alerts" class="service-hero-img">
+
+            <div class="price-comparison">
+                <h3>Today's Sample Prices</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Crop</th>
+                            <th>Local Market</th>
+                            <th>Regional Market</th>
+                            <th>Price Change (24h)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tomatoes</td>
+                            <td>R20/kg</td>
+                            <td>R18.99/kg</td>
+                            <td class="up">↑ 8%</td>
+                        </tr>
+                        <tr>
+                            <td>Maize</td>
+                            <td>R10.99/kg</td>
+                            <td>R11.99/kg</td>
+                            <td class="down">↓ 3%</td>
+                        </tr>
+                        <tr>
+                            <td>Avocados</td>
+                            <td>R 2.99/kg</td>
+                            <td>R 5.99kg</td>
+                            <td class="up">↑ 12%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="service-features">
+                <h3>Key Features</h3>
+                <div class="feature-grid">
+                    <div class="feature">
+                        <img src="">
+                        <h4>Real-time Updates</h4>
+                        <p>Prices updated hourly from 50+ markets</p>
+                    </div>
+                    
+  
+                    <div class="feature">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALcAAACUCAMAAADmiEg1AAAAsVBMVEX///87UGMVh8VgcoEwR1r///2TnaYqR12IlZ/p7O2lrbMAg8MmQ1no8vaBttr///lHnM/Z5/JFls28wscAdsAAfcHH3e41TGAUicPx8/RMYHH4+Pjf4+Wwub/N09cAfr9ZodF7ipKbpa4XNUsbPVRncnzCycpDV2dTZHFtgI5ueoNca3fW3uR5g4xqrNWhx9+OwN6q0eUuk8FNoMuawOO52+qc0e7Y6ezJ5vJ6udhfpskWiFCCAAAFM0lEQVR4nO3ca3uaPBwG8GiTIhLPjRwVsbXaqqjb09Xu+3+wJ5wDUtt1jJTr+t97ZeLwRxpCEg8IQSAQCAQCgUAgEAiksTHVSmLWiiZO17upJF53jkhdbHu2obiaUGp161KjLtVblQXjJbFrgT/eV6cOQie1sJFVYWsHUW5quTp3D9WyW637eR3uLq3a/bCsw32rVO2mHXCDG9zgBje4wQ1ucDfcrSsKpUqhRufLR0XPrzKwQvm/fJk8t77ez53dbCUidf15tnMevTUW2Zvl3JnfbnJwaW59Fa9YlusUpLdm0XJ3vsnguqeGZWpHhMty65aTVHZTz/0sKiFonp4M9ZKVpP0k/BVkuXE33buxn2MjXmWbCzOanN883eNR76W7dWxne06z2P0grHWdrZ74sr2pvSLdvRFqnaTUycpML+oUurg1NXuQ7Va2Je51zh39F+V7ufW1UDtPTmY3SMvUp9gt7jcsqWx3SxHadpn071lWtmtFhcpe2JgSdr2kub30cksuQS5NjMTuJF1Cn6RPnMgfT3i6sUf10sqHpHFJtsGFrWSUcdbCjUfe/bJ1G3QVMn8SbvTYC5GO0JE5fBKcjTnbiAeROD/RrX3HW1m5KrxedW73G5x/4tbr7Let3BNlzmN1jHFh6seRuo6Lm87BuwyFMph/gxvc4AY3uMENbnA3yl35+9z1uCfVvz/P16L2NJ9Rr+qPAamVu4N19bTNXCHM8M9Vw72K4dSzETqwthitzYxpxW61hT/GfD7Kmq9DzYXWLkQzqm5wx1Iq+8iPrgRr/EGhucOwl8HHlj8IQU7HUqiYd/8AOr0exfIcfsDX8SW77R4rbnB+uPmkK6bzTvtT63bZvZZZsLNMzJ9uiVvr/5NPFooHnZTfi+736kcfsQuO0vOZUZ9bzKS0o9C9iQgZXAvv2vZpXNK5JbqxZ3JX73pGB4NpP76TmwbvQZGeP7yWscY0w7gYAyW66VO4rzkaa1dTKpbopjdmeM2Nyka4z0WGmz7Hu8i8vRvkxnuVNNBNn9WkJnMbbc3lF6HgYrnxj7HCGdbuphs1fUXBzfzDYZhSmfF2OBrphcl+/ndYuOJp1e7GWxWVuac2IfYpvjVqfo8QPkq68cOTjYh9lulWblShJnO/RAWnqMXjSarph9XaIap8YdLceOUQ4fUSt+abUWlvGBSwU/SInMLqcbwqI0NNklvZqLkZV+Lmk9KwmNj9YO7HYuhgFNYOoycPBn0mx61YTv7FStxBgdsLawmJ3IvEfZTjxhunUJP1k1A6IK9RP/kVrmUIOkbGqPkJGcvoJ2tl6xS/RZRelxrv0bzJkxbVQimJq7V+MKVFg1/iEF6bG292FzXCOHjoIfJ6jB4a2nDaQ+Z0kSCPr3zueMjdeepy43Wxk+Tcmrvo+9l4oRn8YdYttKHvL9rtut00YO/I5Qvl5if5aWthFnu5EfHv3TuL0pJOUnT/WWpwo8e9V/7Fvu/tJu9+GfF7u98PuMEN7tKwvjz23+xDsDeJ7tfh19v7KI9NbP/r7nPJvKE2+MtX2e5CIpvfRw935S6jZM87KzLc8ai+XwQolZ/ad+W53PZmaZ3b78lEB27yzib4+aLra+e0UmpTf5S3ApzJbuPPha+KtSa6EbKPbiPdyM51lea4eR9nzXSjvttIN+lle4JNciNkpn28WW6S9vFmuTk8vnM2zM2HwwjeODeJPhLBvve0pCz277tGugfot6s10B10FcOv54esKo56rvfX2qoKkbmehEAgEAgEAoFAIBBIZfkft8GKq9tY+qsAAAAASUVORK5CYII=" alt="SMS icon">
+                        <h4>Instant SMS</h4>
+                        <p>No smartphone? Get text message alerts</p>
+                    </div>
+                    <div class="feature">
+                        <img src="https://images.pexels.com/photos/3314294/pexels-photo-3314294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Trends icon">
+                        <h4>Price Trends</h4>
+                        <p>7-day historical data for better decisions</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="how-it-works">
+                <h3>How Our Alerts Work</h3>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <p>Select your crops and preferred markets</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <p>Set your target price thresholds</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <p>Receive instant alerts when prices hit your targets</p>
+                    </div>
+                </div>
+                <img src="https://images.pexels.com/photos/9034763/pexels-photo-9034763.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Price alert system flowchart" class="process-img">
+            </div>
+
+            <div class="notification-demo">
+                <h3>Sample Alert</h3>
+                <div class="sms-demo">
+                    <p><strong>AgriConnect:</strong> PRICE ALERT! Tomatoes at Nakuru Market just reached $1.50/kg (Your target: $1.40). 7-day high: $1.55</p>
+                    <p><strong>Reply:</strong> SELL 200kg to reserve buyer #4721</p>
+                </div>
+            </div>
+
+            <div class="coverage">
+                <h3>Market Coverage</h3>
+                <img src="https://images.pexels.com/photos/8463143/pexels-photo-8463143.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Map showing covered markets" class="coverage-map">
+                <p>Currently serving 12 counties with 50+ markets monitored daily</p>
+            </div>
+
+            <div class="cta-section">
+                <div class="cta-card">
+                    <h4>Get Smarter About Pricing</h4>
+                    <p>Start receiving free basic price alerts today</p>
+                    <a href="contact.html" class="cta-button">Sign Up Now</a>
+                    <p class="small">Premium plans with advanced features available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="related-services">
+        <h3>Explore Other Services</h3>
+        <div class="service-links">
+            <a href="service-buyer-match.html">
+                <img src="https://images.pexels.com/photos/7621136/pexels-photo-7621136.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Buyer Match">
+                <span>Buyer Match</span>
+            </a>
+            <a href="service-logistics.html">
+                <img src="https://images.pexels.com/photos/8061642/pexels-photo-8061642.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Logistics Support">
+                <span>Logistics Support</span>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 AgriConnect. All rights reserved.</p>
+    </footer>
+
+    <script src="Script.js"></script>
+</body>
+</html>
